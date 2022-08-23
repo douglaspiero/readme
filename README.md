@@ -137,11 +137,13 @@ document.body.innerText = JSON.stringify(newArray)
 const newArray = array
    .filter(item => item % 2 === 0)
    .map(item => item * 10)
+
     document.body.innerText = JSON.stringify(newArray)
 
 //every
 
 const todosItensSaoNumeros = array.every(item => typeof item === 'number')
+
 document.body.innerText = JSON.stringify(todosItensSaoNumeros)
 
 //sone
@@ -153,11 +155,13 @@ const peloMenosUmItemNaoEUmNumero = array.some(item => {
 //find
 
 const par = array.find(item => item % 2 === 0)
+
 document.body.innerText = JSON.stringify(par)
 
 //findIndex
 
 const par = array.findIndex(item => item % 2 === 0)
+
 document.body.innerText = JSON.stringify(par)
 
 //reduce
@@ -166,6 +170,7 @@ const soma = array.reduce((acc, item) => {
     document.body.innerText += acc + ' , ' + item 
    return acc + item
  }, 0)
+ 
  document.body.innerText = JSON.stringify(soma)
 ```
 
