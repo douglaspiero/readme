@@ -71,9 +71,11 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const [first, second, ...rest] = array
 
 document.body.innerText = JSON.stringify({first, second, rest})
+```
 
-// Optinal Chaining
+###  Optinal Chaining
 
+```javascript
 const user = {
   name : 'Felipe',
   age : 28,
