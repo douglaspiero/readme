@@ -12,8 +12,8 @@ document.body.innerText = 'Sua idade é: ' + (idade ?? 'Não informado')
 ```javascript
 
 const user = {
-  name : 'Douglas',
-  idade : 34,
+  name : 'Felipe',
+  idade : 25,
   address : {
     street : 'Rua Tals',
     number : 176,
