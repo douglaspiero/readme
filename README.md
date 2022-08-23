@@ -58,27 +58,25 @@ function mostraIdade({idade}) {
 document.body.innerText = mostraIdade(user)
 ```
 
-// Rest operator
+### Rest operator
 
-/*
+```javascript
+
 const {name, idade, ...rest} = user
 
 document.body.innerText = JSON.stringify(rest)
-*/
-/*
+
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const [first, second, ...rest] = array
 
 document.body.innerText = JSON.stringify({first, second, rest})
-*/
 
 // Optinal Chaining
 
-/*
 const user = {
-  name : 'Douglas',
-  age : 34,
+  name : 'Felipe',
+  age : 28,
   address : {
     street : 'Rua Tals',
     number : 176,
@@ -93,104 +91,123 @@ const user = {
 };
 
 document.body.innerText = user.address?.zip?.code ?? 'Não Informado'
+```
 
-*/
+### Metodos de array
 
-//Metodos de array
+```javascript
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-//const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// For
+for (const i of array) {
+ document.body.innerText += " " + i 
+}
 
-//For
-// for (const i of array) {
-//   document.body.innerText += " " + i 
-// }
+// ForEach
+array.forEach(item => {
+document.body.innerText += " " + item 
+})
 
-//ForEach
-// array.forEach(item => {
-//   document.body.innerText += " " + item 
-// })
+```
 
-// map, filter, every, some, find, findIndex, reduce
+### map, filter, every, some, find, findIndex, reduce
 
-
+```javascript
 //map
 
-// const newArray = array.map(item => {
-//   return item * 2
-// })
-// document.body.innerText = JSON.stringify(newArray)
+const newArray = array.map(item => {
+      return item * 2
+})
 
-// const newArray = array.map(item => {
-//   if (item % 2 == 0) {
-//     return item * 10
-//   }
-//     return item
-// })
-// document.body.innerText = JSON.stringify(newArray)
+document.body.innerText = JSON.stringify(newArray)
+
+const newArray = array.map(item => {
+   if (item % 2 == 0) {
+     return item * 10
+   }
+     return item
+ })
+
+document.body.innerText = JSON.stringify(newArray)
 
 //filter
-// const newArray = array
-//   .filter(item => item % 2 === 0)
-//   .map(item => item * 10)
-//document.body.innerText = JSON.stringify(newArray)
+
+const newArray = array
+   .filter(item => item % 2 === 0)
+   .map(item => item * 10)
+    document.body.innerText = JSON.stringify(newArray)
 
 //every
-// const todosItensSaoNumeros = array.every(item => typeof item === 'number')
-// document.body.innerText = JSON.stringify(todosItensSaoNumeros)
+
+const todosItensSaoNumeros = array.every(item => typeof item === 'number')
+document.body.innerText = JSON.stringify(todosItensSaoNumeros)
 
 //sone
-// const peloMenosUmItemNaoEUmNumero = array.some(item => {
-//   return typeof item != 'number'
-// })
+
+const peloMenosUmItemNaoEUmNumero = array.some(item => {
+   return typeof item != 'number'
+})
 
 //find
-// const par = array.find(item => item % 2 === 0)
-// document.body.innerText = JSON.stringify(par)
+
+const par = array.find(item => item % 2 === 0)
+document.body.innerText = JSON.stringify(par)
 
 //findIndex
-// const par = array.findIndex(item => item % 2 === 0)
-// document.body.innerText = JSON.stringify(par)
+
+const par = array.findIndex(item => item % 2 === 0)
+document.body.innerText = JSON.stringify(par)
 
 //reduce
-// const soma = array.reduce((acc, item) => {
-//   document.body.innerText += acc + ' , ' + item 
-//   return acc + item
-// }, 0)
-// document.body.innerText = JSON.stringify(soma)
 
-//Templete Literals
+const soma = array.reduce((acc, item) => {
+    document.body.innerText += acc + ' , ' + item 
+   return acc + item
+ }, 0)
+ document.body.innerText = JSON.stringify(soma)
+```
 
-// const name = "Douglas"
-// const message = `Bem-vindo, ${name}`
-// document.body.innerText = JSON.stringify(message)
+### Templete Literals
 
-//Promises > .then / .catch
+```javascript
+const name = "Douglas"
 
-// fetch('https://api.github.com/users/douglaspiero')
-//   .then(response => {
-//     response.json().then(body => {
-//       console.log(body)
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-// })
+const message = `Bem-vindo, ${name}`
 
-// async function buscaDadosNoGithub() {
-//   try {
-//     const response = await fetch('https://api.github.com/users/douglaspiero')
-//     const body = await response.json()
-//     console.log(body.name) 
-//   } catch (error) {
-//     console.log(error)
-//   } finally {
-//     console.log('deu')
-//   }
-// }
+document.body.innerText = JSON.stringify(message)
 
-// buscaDadosNoGithub().then(name => {
-//   console.log(name)
-// })
+```
+
+### Promises > .then / .catch
+
+```javascript
+fetch('https://api.github.com/users/douglaspiero')
+   .then(response => {
+     response.json().then(body => {
+     console.log(body)
+   })
+})
+    .catch(err => {
+        console.log(err)
+})
+
+async function buscaDadosNoGithub() {
+   try {
+     const response = await fetch('https://api.github.com/users/douglaspiero')
+        const body = await response.json()
+        console.log(body.name) 
+   } catch (error) {
+        console.log(error)
+   } finally {
+        console.log('deu')
+   }
+}
+
+buscaDadosNoGithub().then(name => {
+   console.log(name)
+})
+
+```
 
 
 
