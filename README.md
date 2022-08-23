@@ -1,4 +1,4 @@
-# readme
+# ECMAScript### - Exemplos
 
 ### Nullish Coalescing Operator
 
@@ -35,24 +35,28 @@ document.body.innerText = JSON.stringify(Object.entries(user))
 
 ```
 
-//Desestruturação
+### Desestruturação
 
-//const address = user.address
+```javascript
+const address = user.address
 
-//const {address, idade} = user
-//document.body.innerText = JSON.stringify({address, idade})
+const {address, idade} = user
 
-//const {address, idade : age} = user > Renomear key
-//const {address, idade : age, nickname = 'Piero'} = user > Adicionar valor padrão a uma nova key
+document.body.innerText = JSON.stringify({address, idade})
 
-//document.body.innerText = JSON.stringify({address, age, nickname})
+const {address, idade : age} = user > Renomear key
 
-/* Função com Desestruturação
+const {address, idade : age, nickname = 'Piero'} = user // Adicionar valor padrão a uma nova key
+
+document.body.innerText = JSON.stringify({address, age, nickname})
+
+// Função com Desestruturação
+
 function mostraIdade({idade}) {
   return idade
 }
 document.body.innerText = mostraIdade(user)
-*/
+```
 
 // Rest operator
 
